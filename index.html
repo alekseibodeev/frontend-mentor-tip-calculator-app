@@ -1,44 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <img class="brand-logo" src="./assets/images/logo.svg" alt="" />
+    <main>
+      <div class="container">
+        <section class="calculator">
+          <form class="calculator-form">
+            <div class="input-field">
+              <label class="input-field__label" for="bill">Bill</label>
+              <img
+                class="input-field__icon"
+                src="./assets/images/icon-dollar.svg"
+                alt=""
+              />
+              <input
+                class="input-field__input"
+                type="number"
+                name="bill"
+                id="bill"
+                value="142.55"
+                min="0"
+              />
+            </div>
+            <fieldset class="radio-group">
+              <legend class="radio-group__title">Select Tip %</legend>
+              <div class="radio-group__layout">
+                <label for="tip-5" class="radio-group__button"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-5"
+                    value="5"
+                  />5%</label
+                >
+                <label for="tip-10" class="radio-group__button"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-10"
+                    value="10"
+                  />10%</label
+                >
+                <label for="tip-15" class="radio-group__button active"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-15"
+                    value="15"
+                  />15%</label
+                >
+                <label for="tip-25" class="radio-group__button"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-25"
+                    value="25"
+                  />25%</label
+                >
+                <label for="tip-50" class="radio-group__button"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-50"
+                    value="50"
+                  />50%</label
+                >
+                <label
+                  for="tip-custom"
+                  class="radio-group__button radio-group__button_custom"
+                  ><input
+                    type="radio"
+                    name="tip"
+                    id="tip-custom"
+                    value="0"
+                  />Custom</label
+                >
+              </div>
+            </fieldset>
+            <div class="input-field">
+              <label class="input-field__label" for="people"
+                >Number of People</label
+              >
+              <img
+                class="input-field__icon"
+                src="./assets/images/icon-person.svg"
+                alt=""
+              />
+              <input
+                class="input-field__input"
+                type="number"
+                name="people"
+                id="people"
+                value="5"
+                min="1"
+                step="1"
+              />
+            </div>
+          </form>
+          <div class="output">
+            <div class="output-field">
+              <strong class="output-field__title">Tip Amount</strong>
+              <div class="output-field__pp">/ person</div>
+              <div class="output-field__value">
+                $<span id="tip-value">4.27</span>
+              </div>
+            </div>
+            <div class="output-field">
+              <strong class="output-field__title">Total</strong>
+              <div class="output-field__pp">/ person</div>
+              <div class="output-field__value">
+                $<span id="total-value">32.79</span>
+              </div>
+            </div>
+            <button class="button" id="reset">Reset</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
