@@ -78,6 +78,30 @@ body {
   gap: 2rem;
 }
 
+.input {
+  color: var(--clr-cyan-900);
+  background-color: var(--clr-grayish-cyan-50);
+  font-size: var(--fs-600);
+  padding: 0.25rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  text-align: end;
+}
+
+.input:hover,
+.input:focus {
+  outline: 0.15rem solid var(--clr-cyan-500);
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input[type="number"] {
+  appearance: textfield;
+}
+
 .input-field {
   display: grid;
   grid-template-columns: [label-start icon-start input-start] auto [icon-end] 1fr [label-end input-end];
@@ -98,22 +122,6 @@ body {
 
 .input-field__input {
   grid-area: input;
-  color: var(--clr-cyan-900);
-  background-color: var(--clr-grayish-cyan-50);
-  font-size: var(--fs-600);
-  padding: 0.25rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  text-align: end;
-}
-
-.input-field__input::-webkit-outer-spin-button,
-.input-field__input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.input-field__input[type="number"] {
-  appearance: textfield;
 }
 
 .radio-group {
@@ -140,10 +148,34 @@ body {
   cursor: pointer;
 }
 
+.radio-group__button_custom-wrapper {
+  position: relative;
+}
+
 .radio-group__button_custom {
+  position: absolute;
+  inset: 0;
   color: var(--clr-grayish-cyan-500);
   background-color: var(--clr-grayish-cyan-50);
   text-align: end;
+}
+
+.radio-group__button_custom-input {
+  position: absolute;
+  inset: 0;
+  display: none;
+  z-index: 10;
+}
+
+.radio-group__button_custom:has(input:checked)
+  + .radio-group__button_custom-input {
+  display: grid;
+}
+
+.radio-group__button_custom:has(input:checked)
+  + .radio-group__button_custom-input:not(:focus) {
+  color: var(--clr-cyan-900);
+  background-color: var(--clr-cyan-500);
 }
 
 .radio-group__button:has(input:checked) {
@@ -197,4 +229,9 @@ body {
   border: none;
   border-radius: 0.25rem;
   text-transform: uppercase;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-grayish-cyan-200);
 }

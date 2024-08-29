@@ -11,13 +11,14 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <title>Frontend Mentor | Tip calculator app</title>
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <img class="brand-logo" src="./assets/images/logo.svg" alt="" />
     <main>
       <div class="container">
         <section class="calculator">
-          <form class="calculator-form">
+          <form id="calculator-form" class="calculator-form">
             <div class="input-field">
               <label class="input-field__label" for="bill">Bill</label>
               <img
@@ -26,7 +27,7 @@
                 alt=""
               />
               <input
-                class="input-field__input"
+                class="input-field__input input"
                 type="number"
                 name="bill"
                 id="bill"
@@ -34,7 +35,7 @@
                 min="0"
               />
             </div>
-            <fieldset class="radio-group">
+            <fieldset id="tip" class="radio-group">
               <legend class="radio-group__title">Select Tip %</legend>
               <div class="radio-group__layout">
                 <label for="tip-5" class="radio-group__button"
@@ -78,16 +79,25 @@
                     value="50"
                   />50%</label
                 >
-                <label
-                  for="tip-custom"
-                  class="radio-group__button radio-group__button_custom"
-                  ><input
-                    type="radio"
-                    name="tip"
-                    id="tip-custom"
-                    value="0"
-                  />Custom</label
-                >
+                <div class="radio-group__button_custom-wrapper">
+                  <label
+                    for="tip-custom"
+                    class="radio-group__button radio-group__button_custom"
+                    ><input
+                      type="radio"
+                      name="tip"
+                      id="tip-custom"
+                      value="0"
+                    />Custom</label
+                  >
+                  <input
+                    class="radio-group__button_custom-input input"
+                    type="number"
+                    id="tip-custom-value"
+                    min="5"
+                    step="1"
+                  />
+                </div>
               </div>
             </fieldset>
             <div class="input-field">
@@ -100,7 +110,7 @@
                 alt=""
               />
               <input
-                class="input-field__input"
+                class="input-field__input input"
                 type="number"
                 name="people"
                 id="people"
