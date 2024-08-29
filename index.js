@@ -13,19 +13,19 @@ const reset = document.getElementById("reset");
 const handleInputChange = () => new FormData(form);
 
 const calcTip = (formdata) => {
-  if (!formdata.people || !formdata.bill || !formdata.tip) return 0;
   const bill = parseFloat(formdata.bill);
   const tip = parseFloat(formdata.tip);
   const people = parseFloat(formdata.people);
+  if (!bill || !tip || !people) return 0;
   return (bill * (tip / 100)) / people;
 };
 
 const calcTotal = (formdata) => {
-  if (!formdata.people || !formdata.bill) return 0;
-  if (!formdata.tip) bill / people;
   const bill = parseFloat(formdata.bill);
   const tip = parseFloat(formdata.tip);
   const people = parseFloat(formdata.people);
+  if (!bill || !people) return 0;
+  if (!tip) return bill / people;
   return (bill * ((100 + tip) / 100)) / people;
 };
 
@@ -48,7 +48,7 @@ form.addEventListener("formdata", (event) => {
   tipValue.textContent = calcTip(formdata).toFixed(2);
   totalValue.textContent = calcTotal(formdata).toFixed(2);
 
-  if (!formdata.bill || !formdata.tip || !formdata.people) {
+  if (!formdata.bill && !formdata.tip && !formdata.people) {
     reset.setAttribute("disabled", "");
   } else {
     reset.removeAttribute("disabled", "");

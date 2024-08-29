@@ -31,9 +31,9 @@
                 type="number"
                 name="bill"
                 id="bill"
-                value="142.55"
                 min="0"
                 step="0.01"
+                placeholder="0"
               />
             </div>
             <fieldset id="tip" class="radio-group">
@@ -57,7 +57,6 @@
                 >
                 <label for="tip-15" class="radio-group__button"
                   ><input
-                    checked
                     type="radio"
                     name="tip"
                     id="tip-15"
@@ -97,6 +96,7 @@
                     id="tip-custom-value"
                     min="5"
                     step="1"
+                    placeholder="0"
                   />
                 </div>
               </div>
@@ -115,9 +115,9 @@
                 type="number"
                 name="people"
                 id="people"
-                value="5"
-                min="1"
+                min="0"
                 step="1"
+                placeholder="0"
               />
             </div>
           </form>
@@ -126,17 +126,19 @@
               <strong class="output-field__title">Tip Amount</strong>
               <div class="output-field__pp">/ person</div>
               <div class="output-field__value">
-                $<span id="tip-value">4.27</span>
+                $<span id="tip-value">0.00</span>
               </div>
             </div>
             <div class="output-field">
               <strong class="output-field__title">Total</strong>
               <div class="output-field__pp">/ person</div>
               <div class="output-field__value">
-                $<span id="total-value">32.79</span>
+                $<span id="total-value">0.00</span>
               </div>
             </div>
-            <button class="button output__button" id="reset">Reset</button>
+            <button class="button output__button" id="reset" disabled>
+              Reset
+            </button>
           </div>
         </section>
       </div>
