@@ -37,6 +37,8 @@ img {
   --clr-grayish-cyan-400: hsl(184, 14%, 56%);
   --clr-grayish-cyan-500: hsl(186, 14%, 43%);
 
+  --clr-red-500: hsl(0, 84%, 60%);
+
   --clr-white: hsl(0, 0%, 100%);
 
   --ff-main: "Space Mono";
@@ -109,15 +111,25 @@ body {
   appearance: textfield;
 }
 
+.input:invalid {
+  outline: 0.15rem solid var(--clr-red-500);
+}
+
 .input-field {
   display: grid;
-  grid-template-columns: [label-start icon-start input-start] auto [icon-end] 1fr [label-end input-end];
-  grid-template-rows: [label-start] auto [label-end icon-start input-start] auto [icon-end input-end];
+  grid-template-columns: [label-start error-start icon-start input-start] auto [icon-end] 1fr [label-end error-end input-end];
+  grid-template-rows: [label-start error-start] auto [label-end error-end icon-start input-start] auto [icon-end input-end];
   row-gap: 0.25rem;
 }
 
 .input-field__label {
   grid-area: label;
+}
+
+.input-field__error {
+  grid-area: error;
+  justify-self: self-end;
+  color: var(--clr-red-500);
 }
 
 .input-field__icon {

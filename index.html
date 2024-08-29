@@ -21,6 +21,11 @@
           <form id="calculator-form" class="calculator-form">
             <div class="input-field">
               <label class="input-field__label" for="bill">Bill</label>
+              <span
+                id="bill-error"
+                class="input-field__error"
+                aria-live="polite"
+              ></span>
               <img
                 class="input-field__icon"
                 src="./assets/images/icon-dollar.svg"
@@ -31,7 +36,7 @@
                 type="number"
                 name="bill"
                 id="bill"
-                min="0"
+                min="0.01"
                 step="0.01"
                 placeholder="0"
               />
@@ -94,8 +99,8 @@
                     class="radio-group__button_custom-input input"
                     type="number"
                     id="tip-custom-value"
-                    min="5"
-                    step="1"
+                    min="0"
+                    step="0.1"
                     placeholder="0"
                   />
                 </div>
@@ -105,6 +110,11 @@
               <label class="input-field__label" for="people"
                 >Number of People</label
               >
+              <span
+                id="people-error"
+                class="input-field__error"
+                aria-live="polite"
+              ></span>
               <img
                 class="input-field__icon"
                 src="./assets/images/icon-person.svg"
@@ -115,7 +125,7 @@
                 type="number"
                 name="people"
                 id="people"
-                min="0"
+                min="1"
                 step="1"
                 placeholder="0"
               />

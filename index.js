@@ -10,7 +10,23 @@ const tipValue = document.getElementById("tip-value");
 const totalValue = document.getElementById("total-value");
 const reset = document.getElementById("reset");
 
-const handleInputChange = () => new FormData(form);
+const handleInputChange = () => {
+  if (!form.checkValidity()) return;
+  new FormData(form);
+};
+
+const handleErrorChange = (event) => {
+  const target = event.currentTarget;
+  const value = parseFloat(target.value);
+  const error = target.parentElement.querySelector(".input-field__error");
+  if (value === 0) {
+    error.textContent = "Can't be zero";
+  } else if (value < 0) {
+    error.textContent = "Can't be negative";
+  } else {
+    error.textContent = "";
+  }
+};
 
 const calcTip = (formdata) => {
   const bill = parseFloat(formdata.bill);
@@ -38,10 +54,12 @@ tipCustomValue.addEventListener("input", () => {
 });
 
 bill.addEventListener("input", handleInputChange);
+bill.addEventListener("input", handleErrorChange);
 
 tip.addEventListener("input", handleInputChange);
 
 people.addEventListener("input", handleInputChange);
+people.addEventListener("input", handleErrorChange);
 
 form.addEventListener("formdata", (event) => {
   const formdata = Object.fromEntries(event.formData);
