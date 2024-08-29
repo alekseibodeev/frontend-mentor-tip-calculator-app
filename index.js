@@ -8,6 +8,7 @@ const form = document.getElementById("calculator-form");
 
 const tipValue = document.getElementById("tip-value");
 const totalValue = document.getElementById("total-value");
+const reset = document.getElementById("reset");
 
 const handleInputChange = () => new FormData(form);
 
@@ -46,4 +47,20 @@ form.addEventListener("formdata", (event) => {
   const formdata = Object.fromEntries(event.formData);
   tipValue.textContent = calcTip(formdata).toFixed(2);
   totalValue.textContent = calcTotal(formdata).toFixed(2);
+
+  if (!formdata.bill || !formdata.tip || !formdata.people) {
+    reset.setAttribute("disabled", "");
+  } else {
+    reset.removeAttribute("disabled", "");
+  }
+});
+
+reset.addEventListener("click", () => {
+  bill.value = "";
+  people.value = "";
+  tip
+    .querySelectorAll('input[type="radio"]')
+    .forEach((button) => (button.checked = false));
+  tipCustomValue.value = "";
+  new FormData(form);
 });
