@@ -46,6 +46,7 @@ img {
   --fs-500: 1.25rem;
   --fs-600: 1.5rem;
   --fs-800: 2rem;
+  --fs-900: 3rem;
 
   --fw-regular: 700;
 }
@@ -57,6 +58,11 @@ body {
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
   line-height: 1.5;
+}
+
+.container {
+  max-width: 58rem;
+  margin-inline: auto;
 }
 
 .brand-logo {
@@ -86,6 +92,7 @@ body {
   border: none;
   border-radius: 0.25rem;
   text-align: end;
+  cursor: pointer;
 }
 
 .input:hover,
@@ -206,6 +213,7 @@ body {
 .output-field__title {
   grid-area: title;
   color: var(--clr-white);
+  align-self: self-end;
 }
 
 .output-field__pp {
@@ -234,4 +242,36 @@ body {
 .button:hover,
 .button:focus {
   background-color: var(--clr-grayish-cyan-200);
+}
+
+@media screen and (min-width: 68rem) {
+  .calculator {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 2rem;
+  }
+
+  .calculator-form {
+    padding: 1rem;
+  }
+
+  .radio-group__layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .radio-group__button {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .output {
+    grid-template-rows: auto auto 1fr;
+    padding: 2rem;
+  }
+
+  .output-field__value {
+    font-size: var(--fs-900);
+  }
+
+  .output__button {
+    align-self: self-end;
+  }
 }
