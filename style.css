@@ -122,7 +122,7 @@ body {
 
 .input-field_labeled {
   grid-template-columns: [label-start error-start icon-start input-start] auto [icon-end] 1fr [label-end error-end input-end];
-  grid-template-rows: [label-start error-start] auto [label-end error-end icon-start input-start] auto [icon-end input-end];
+  grid-template-rows: [label-start] auto [label-end icon-start input-start] auto [icon-end input-end error-start] auto [error-end];
   row-gap: 0.25rem;
 }
 
@@ -132,7 +132,6 @@ body {
 
 .input-field__error {
   grid-area: error;
-  justify-self: self-end;
   color: var(--clr-red-500);
 }
 
@@ -166,7 +165,7 @@ body {
   color: var(--clr-white);
   background-color: var(--clr-cyan-900);
   font-size: var(--fs-600);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
   text-align: center;
   cursor: pointer;
@@ -274,6 +273,17 @@ body {
   background-color: var(--clr-cyan-500);
   cursor: not-allowed;
   filter: brightness(0.5);
+}
+
+@media screen and (min-width: 425px) {
+  .input-field_labeled {
+    grid-template-columns: [label-start error-start icon-start input-start] auto [icon-end] 1fr [label-end error-end input-end];
+    grid-template-rows: [label-start error-start] auto [label-end error-end icon-start input-start] auto [icon-end input-end];
+  }
+
+  .input-field__error {
+    justify-self: self-end;
+  }
 }
 
 @media screen and (min-width: 52.5rem) {
