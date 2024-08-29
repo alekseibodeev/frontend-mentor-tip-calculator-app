@@ -19,7 +19,7 @@
       <div class="container">
         <section class="calculator">
           <form id="calculator-form" class="calculator-form">
-            <div class="input-field">
+            <div class="input-field input-field_labeled">
               <label class="input-field__label" for="bill">Bill</label>
               <span
                 id="bill-error"
@@ -41,10 +41,10 @@
                 placeholder="0"
               />
             </div>
-            <fieldset id="tip" class="radio-group">
-              <legend class="radio-group__title">Select Tip %</legend>
-              <div class="radio-group__layout">
-                <label for="tip-5" class="radio-group__button"
+            <fieldset id="tip" class="fieldset">
+              <legend class="fieldset">Select Tip %</legend>
+              <div class="fieldset__layout">
+                <label for="tip-5" class="radio-button"
                   ><input
                     type="radio"
                     name="tip"
@@ -52,7 +52,7 @@
                     value="5"
                   />5%</label
                 >
-                <label for="tip-10" class="radio-group__button"
+                <label for="tip-10" class="radio-button"
                   ><input
                     type="radio"
                     name="tip"
@@ -60,7 +60,7 @@
                     value="10"
                   />10%</label
                 >
-                <label for="tip-15" class="radio-group__button"
+                <label for="tip-15" class="radio-button"
                   ><input
                     type="radio"
                     name="tip"
@@ -68,7 +68,7 @@
                     value="15"
                   />15%</label
                 >
-                <label for="tip-25" class="radio-group__button"
+                <label for="tip-25" class="radio-button"
                   ><input
                     type="radio"
                     name="tip"
@@ -76,7 +76,7 @@
                     value="25"
                   />25%</label
                 >
-                <label for="tip-50" class="radio-group__button"
+                <label for="tip-50" class="radio-button"
                   ><input
                     type="radio"
                     name="tip"
@@ -84,10 +84,10 @@
                     value="50"
                   />50%</label
                 >
-                <div class="radio-group__button_custom-wrapper">
+                <div class="radio-button-custom">
                   <label
                     for="tip-custom"
-                    class="radio-group__button radio-group__button_custom"
+                    class="radio-button radio-button-custom__button"
                     ><input
                       type="radio"
                       name="tip"
@@ -95,18 +95,23 @@
                       value="0"
                     />Custom</label
                   >
-                  <input
-                    class="radio-group__button_custom-input input"
-                    type="number"
-                    id="tip-custom-value"
-                    min="0"
-                    step="0.1"
-                    placeholder="0"
-                  />
+                  <div class="input-field radio-button-custom__input-field">
+                    <span class="input-field__icon" aria-disabled="true"
+                      >%</span
+                    >
+                    <input
+                      class="input input-field__input radio-button-custom__input"
+                      type="number"
+                      id="tip-custom-value"
+                      min="0"
+                      step="0.1"
+                      placeholder="0"
+                    />
+                  </div>
                 </div>
               </div>
             </fieldset>
-            <div class="input-field">
+            <div class="input-field input-field_labeled">
               <label class="input-field__label" for="people"
                 >Number of People</label
               >
@@ -134,14 +139,14 @@
           <div class="output">
             <div class="output-field">
               <strong class="output-field__title">Tip Amount</strong>
-              <div class="output-field__pp">/ person</div>
+              <div class="output-field__unit">/ person</div>
               <div class="output-field__value">
                 $<span id="tip-value">0.00</span>
               </div>
             </div>
             <div class="output-field">
               <strong class="output-field__title">Total</strong>
-              <div class="output-field__pp">/ person</div>
+              <div class="output-field__unit">/ person</div>
               <div class="output-field__value">
                 $<span id="total-value">0.00</span>
               </div>
