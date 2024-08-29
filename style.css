@@ -128,7 +128,7 @@ body {
 
 .input-field_labeled {
   grid-template-columns: [label-start error-start icon-start input-start] auto [icon-end] 1fr [label-end error-end input-end];
-  grid-template-rows: [label-start] auto [label-end icon-start input-start] auto [icon-end input-end error-start] auto [error-end];
+  grid-template-rows: [label-start] 1fr [label-end icon-start input-start] auto [icon-end input-end error-start] 1fr [error-end];
   row-gap: 0.25rem;
 }
 
