@@ -41,6 +41,8 @@ img {
 
   --clr-white: hsl(0, 0%, 100%);
 
+  --clr-shadow: hsl(183 100% 15% / 0.1);
+
   --ff-main: "Space Mono";
 
   --fs-300: 0.8125rem;
@@ -65,6 +67,9 @@ body {
 .container {
   max-width: 52.5rem;
   margin-inline: auto;
+  display: grid;
+  align-content: center;
+  min-height: 100vh;
 }
 
 .brand-logo {
@@ -79,6 +84,7 @@ body {
   border-start-end-radius: 2rem;
   display: grid;
   gap: 2rem;
+  box-shadow: 1rem 2rem 1rem var(--clr-shadow);
 }
 
 .calculator-form {
