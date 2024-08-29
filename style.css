@@ -155,6 +155,11 @@ body {
   cursor: pointer;
 }
 
+.radio-group__button:hover {
+  color: var(--clr-cyan-900);
+  background-color: var(--clr-grayish-cyan-200);
+}
+
 .radio-group__button_custom-wrapper {
   position: relative;
 }
